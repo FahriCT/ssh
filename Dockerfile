@@ -12,4 +12,4 @@ RUN mkdir -p /var/lib/tailscale
 COPY start.sh /start.sh
 RUN chmod +x /start.sh
 
-CMD ["/start.sh"]
+ENTRYPOINT ["/start.sh"]
