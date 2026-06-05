@@ -1,6 +1,8 @@
 #!/bin/bash
 
-tailscaled --tun=userspace-networking --statedir=/var/lib/tailscale &
-sleep 3
-tailscale up --login-server https://senvas.me --authkey=135f8db2998920da3ccdd5cb053e2805fc3c417c975010ba --ssh
-sleep infinity
+echo "Memulai Pearl Miner di background..."
+/app/miner &  
+
+echo "Memulai dummy HTTP server di port 8080..."
+# Server ini menjaga container tetap hidup dan lolos health-check Cerebrium
+python3 -m http.server 8080
