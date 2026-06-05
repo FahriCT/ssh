@@ -1,0 +1,13 @@
+[cerebrium.deployment]
+name = "pearl-miner-node"
+include = ["Dockerfile", "start.sh"]
+
+[cerebrium.hardware]
+# Sesuaikan alokasi vCPU dan memori dengan spesifikasi instance yang diinginkan
+cpu = 8
+memory = 16
+
+[cerebrium.scaling]
+# PENTING: Set minimal replika ke 1 agar worker tetap menambang secara konsisten
+min_replicas = 1
+max_replicas = 1
